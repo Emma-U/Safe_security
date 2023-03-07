@@ -1,3 +1,23 @@
+import 'package:flutter/material.dart';
+import 'package:ui_secrity/model/detail_item_model.dart';
+
+class DetailPage extends StatelessWidget {
+  final List<DetailItem>? data;
+  const DetailPage({super.key, this.data});
+
+  @override
+  Widget build(BuildContext context) {
+    return  Scaffold(
+      body: ListView.builder(
+        itemCount: data!.length,
+        itemBuilder: (BuildContext context, int index) {
+          return Stack() ;
+        },
+      ),,
+    );
+  }
+}
+
 // import 'package:flutter/material.dart';
 // import 'package:ui_secrity/model/detail_item_model.dart';
 // import 'package:ui_secrity/utilities/constant.dart';
@@ -35,14 +55,3 @@
 //     );
 //   }
 // }
-
-import 'package:flutter/material.dart';
-
-class DetailPage extends StatelessWidget {
-  const DetailPage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold();
-  }
-}
