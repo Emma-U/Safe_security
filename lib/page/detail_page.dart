@@ -7,13 +7,13 @@ class DetailPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       body: ListView.builder(
         itemCount: data!.length,
         itemBuilder: (BuildContext context, int index) {
-          return Stack() ;
+          return Stack();
         },
-      ),,
+      ),
     );
   }
 }
