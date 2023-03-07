@@ -28,7 +28,7 @@ class Detail {
       inactive: true,
     ),
     DetailItem(
-      roomName: 'Garden',
+      roomName: 'living_Room',
       img: 'assets/images/rest.png',
       color: Colors.black38,
       time: '5.30 PM',

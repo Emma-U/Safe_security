@@ -9,14 +9,14 @@ class DetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView.builder(
-        itemCount: data!.length,
+        itemCount: data?.length,
         itemBuilder: (BuildContext context, int index) {
           return Stack();
         },
       ),
     );
   }
-}
+} 
 
 // import 'package:flutter/material.dart';
 // import 'package:ui_secrity/model/detail_item_model.dart';

@@ -13,48 +13,31 @@ class ContainerWidget extends StatefulWidget {
 class _ContainerWidgetState extends State<ContainerWidget> {
   @override
   Widget build(BuildContext context) {
-    return ListWheelScrollView(
-      clipBehavior: Clip.hardEdge,
-      offAxisFraction: -8,
-      scrollBehavior: const ScrollBehavior(),
-      itemExtent: 420,
-      onSelectedItemChanged: (value) {
-        setState(() async {
-          await Navigator.pushNamed(context, 'thirdScreen',
-              arguments: Detail.data);
-        });
-      },
-//useMagnifier: true,
-      physics: const FixedExtentScrollPhysics(),
-      squeeze: 1.5,
-      diameterRatio: 30,
-      children: List.generate(Detail.data.length, (index) {
-        var get = Detail.data[index];
-        return InkWell(
-          onTap: () =>
-              Navigator.pushNamed(context, 'thirdScreen', arguments: get),
-          child: ContainerItem(getItem: get),
-        );
-      }),
+    return GestureDetector(
+      onTap: () =>
+          Navigator.pushNamed(context, 'thirdScreen', arguments: Detail.data),
+      child: ListWheelScrollView(
+        clipBehavior: Clip.hardEdge,
+        offAxisFraction: -8,
+        scrollBehavior: const ScrollBehavior(),
+        itemExtent: 420,
+        onSelectedItemChanged: (value) {},
+        //useMagnifier: true,
+        physics: const FixedExtentScrollPhysics(),
+        squeeze: 1.5,
+        diameterRatio: 30,
+        children: List.generate(Detail.data.length, (index) {
+          var get = Detail.data[index];
+          return ContainerItem(getItem: get);
+        }),
+      ),
     );
   }
 }
 
-// var value = Navigator.pushNamed(
-//           context,
-//           'thirdScreen',
-//           arguments: DetailItemsWidget.data,
-//         );
-   // await value;
-          // if (value == null) {
-          //   return null;
-          // } else {
-          //   (value != null) {};
-          // }
 
-//  ListView.builder(
-//         itemCount: data.length,
-//         itemBuilder: (BuildContext context, int index) {
-//           final RoomItem file = data[index];
-//           return
-//final  Map<String, Object>Data = RoomItem().of(context).settings.arguments
+// InkWell(
+//           onTap: () =>
+//               Navigator.pushNamed(context, 'thirdScreen', arguments: get),
+//           child: ContainerItem(getItem: get),
+//         );
