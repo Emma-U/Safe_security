@@ -61,7 +61,9 @@ Stack homeBottom(BuildContext context) {
           children: [
             GestureDetector(
               onTap: () {
-                Navigator.pushNamed(context, 'homeScreen');
+                Navigator.pop(
+                  context,
+                );
               },
               child: Container(
                 height: 55,

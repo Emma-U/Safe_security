@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ui_secrity/model/detail_item_model.dart';
+import 'package:ui_secrity/page/detail_page.dart';
 import 'package:ui_secrity/utilities/list.dart';
 import 'package:ui_secrity/widget/container_item.dart';
 
