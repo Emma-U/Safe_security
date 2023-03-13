@@ -12,7 +12,7 @@ class ContainerWidget extends StatefulWidget {
   State<ContainerWidget> createState() => _ContainerWidgetState();
 }
 
-int detail = Detail.data[detail] as int;
+int detail = 0; //Detail.data.length;
 
 class _ContainerWidgetState extends State<ContainerWidget> {
   @override
@@ -29,7 +29,7 @@ class _ContainerWidgetState extends State<ContainerWidget> {
         scrollBehavior: const ScrollBehavior(),
         itemExtent: 420,
         onSelectedItemChanged: (value) {
-          value = detail;
+          // value = detail;
         },
         //useMagnifier: true,
         physics: const FixedExtentScrollPhysics(),
