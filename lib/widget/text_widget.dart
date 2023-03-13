@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:ui_secrity/model/detail_item_model.dart';
 import 'package:ui_secrity/utilities/constant.dart';
-import 'package:ui_secrity/utilities/list.dart';
 
 class TopDetail extends StatelessWidget {
-  final Detail? file;
+  final DetailItem? file;
   const TopDetail({
     super.key,
     this.file,
@@ -17,19 +17,17 @@ class TopDetail extends StatelessWidget {
         right: 90,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: const [
+          children: [
             Text(
-              // widget.file.item.roomName,
-              '',
-              style: TextStyle(
+              file!.roomName,
+              style: const TextStyle(
                 fontSize: 68,
                 color: kColor2,
               ),
             ),
             Text(
-              // widget.file!.active ? 'active' : 'inactive',
-              '',
-              style: TextStyle(fontSize: 25, color: kColor2),
+              file!.active ? 'active' : 'inactive',
+              style: const TextStyle(fontSize: 25, color: kColor2),
             ),
           ],
         ),

@@ -80,4 +80,3 @@ class _ContainerItemState extends State<ContainerItem> {
     );
   }
 }
-// () ?? 'assets/images/kitchen.png'),

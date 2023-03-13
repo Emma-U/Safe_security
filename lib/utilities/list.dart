@@ -45,7 +45,3 @@ class Detail {
     )
   ];
 }
-
-// String getImage() {
-  //   return data[index].img;
-  // }

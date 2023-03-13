@@ -12,13 +12,11 @@ class ContainerWidget extends StatefulWidget {
   State<ContainerWidget> createState() => _ContainerWidgetState();
 }
 
-int detail = 2;
+int detail = 0; //Detail.data.length;
 
 class _ContainerWidgetState extends State<ContainerWidget> {
   @override
   Widget build(BuildContext context) {
-    // Detail data = Detail.data.length as Detail;
-    //  final DetailItem data = [] as DetailItem;
     var get = Detail.data[detail];
     return GestureDetector(
       onTap: () => Navigator.push(context,
