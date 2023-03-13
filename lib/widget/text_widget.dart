@@ -3,10 +3,10 @@ import 'package:ui_secrity/model/detail_item_model.dart';
 import 'package:ui_secrity/utilities/constant.dart';
 
 class TopDetail extends StatelessWidget {
-  final DetailItem? file;
+  final DetailItem file;
   const TopDetail({
     super.key,
-    this.file,
+    required this.file,
   });
 
   @override
@@ -19,14 +19,14 @@ class TopDetail extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              file!.roomName,
+              file.roomName,
               style: const TextStyle(
                 fontSize: 68,
                 color: kColor2,
               ),
             ),
             Text(
-              file!.active ? 'active' : 'inactive',
+              file.active ? 'active' : 'inactive',
               style: const TextStyle(fontSize: 25, color: kColor2),
             ),
           ],

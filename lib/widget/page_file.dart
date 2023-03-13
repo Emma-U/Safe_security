@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:ui_secrity/model/detail_item_model.dart';
 import 'package:ui_secrity/utilities/constant.dart';
+import 'package:ui_secrity/utilities/list.dart';
+import 'package:ui_secrity/widget/container_widget.dart';
 import 'package:ui_secrity/widget/item_key.dart';
 import 'package:ui_secrity/widget/speaker_widget.dart';
 import 'package:ui_secrity/widget/text_widget.dart';
@@ -40,7 +43,9 @@ class _PageFileState extends State<PageFile> {
             ),
           ),
         ),
-        const TopDetail(),
+        TopDetail(
+          file: Detail.data[detail],
+        ),
         const SpeakerWidget(),
         const ItemKey()
       ],

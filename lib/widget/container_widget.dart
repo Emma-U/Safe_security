@@ -12,7 +12,7 @@ class ContainerWidget extends StatefulWidget {
   State<ContainerWidget> createState() => _ContainerWidgetState();
 }
 
-int detail = 0; //Detail.data.length;
+int detail = Detail.data[detail] as int;
 
 class _ContainerWidgetState extends State<ContainerWidget> {
   @override

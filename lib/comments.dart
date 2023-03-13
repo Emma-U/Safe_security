@@ -4,6 +4,21 @@
 //           'thirdScreen',
 //           arguments: DetailItemsWidget.data,
 //         );
+ // initialRoute: 'homeScreen',
+      // routes: {
+      //   // When navigating to the "homeScreen" route, build the HomeScreen widget.
+      //   'homeScreen': (context) => const HomePage(),
+      //   // When navigating to the "secondScreen" route, build the SecondScreen widget.
+      //   'secondScreen': (context) => const FilePage(),
+      //   // When navigating to the "thirdScreen" route, build the SecondScreen widget.
+      //   'thirdScreen': (context) => const DetailPage(),
+      // },
+      // theme: ThemeData(
+      //   primaryColor: kColor2,
+      //   primaryColorDark: kColor,
+      //   primaryColorLight: kColor3,
+      //   colorScheme: ColorScheme.fromSwatch().copyWith(secondary: kColor1),
+      // ),
    // await value;
           // if (value == null) {
           //   return null;
