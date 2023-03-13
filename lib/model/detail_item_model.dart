@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 class DetailItem {
-  String img;
-  String roomName;
-  Color color;
-  String time;
+  final String img;
+  final String roomName;
+  final Color color;
+  final String time;
   bool active;
   bool inactive;
 
@@ -13,7 +13,10 @@ class DetailItem {
     required this.roomName,
     required this.color,
     required this.time,
-    required this.active,
-    required this.inactive,
+    this.active = false,
+    this.inactive = false,
   });
+
+  String get() =>
+      'DetailItem{img: $img, roomName: $roomName, color: $color, time: $time, inactive: $inactive, active: $active}';
 }

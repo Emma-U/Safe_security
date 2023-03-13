@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:ui_secrity/model/detail_item_model.dart';
 import 'package:ui_secrity/utilities/constant.dart';
+import 'package:ui_secrity/utilities/list.dart';
 
 class TopDetail extends StatelessWidget {
-  final DetailItem? file;
+  final Detail? file;
   const TopDetail({
     super.key,
     this.file,

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ui_secrity/model/detail_item_model.dart';
 
 class Detail {
-  static List<DetailItem> data = [
+  static final data = <DetailItem>[
     DetailItem(
       roomName: 'Library',
       img: 'assets/images/living.png',

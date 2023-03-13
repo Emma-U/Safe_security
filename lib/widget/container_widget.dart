@@ -1,28 +1,38 @@
 import 'package:flutter/material.dart';
-import 'package:ui_secrity/model/detail_item_model.dart';
 import 'package:ui_secrity/page/detail_page.dart';
 import 'package:ui_secrity/utilities/list.dart';
 import 'package:ui_secrity/widget/container_item.dart';
 
 class ContainerWidget extends StatefulWidget {
-  const ContainerWidget({super.key, DetailItem? data});
+  const ContainerWidget({
+    super.key,
+  });
 
   @override
   State<ContainerWidget> createState() => _ContainerWidgetState();
 }
 
+int detail = 2;
+
 class _ContainerWidgetState extends State<ContainerWidget> {
   @override
   Widget build(BuildContext context) {
+    // Detail data = Detail.data.length as Detail;
+    //  final DetailItem data = [] as DetailItem;
+    var get = Detail.data[detail];
     return GestureDetector(
-      onTap: () =>
-          Navigator.pushNamed(context, 'thirdScreen', arguments: Detail.data),
+      onTap: () => Navigator.push(context,
+          MaterialPageRoute(builder: (BuildContext context) {
+        return DetailPage(data: get);
+      })),
       child: ListWheelScrollView(
         clipBehavior: Clip.hardEdge,
         offAxisFraction: -8,
         scrollBehavior: const ScrollBehavior(),
         itemExtent: 420,
-        onSelectedItemChanged: (value) {},
+        onSelectedItemChanged: (value) {
+          value = detail;
+        },
         //useMagnifier: true,
         physics: const FixedExtentScrollPhysics(),
         squeeze: 1.5,
@@ -35,7 +45,12 @@ class _ContainerWidgetState extends State<ContainerWidget> {
     );
   }
 }
-
+// Navigator.push(
+//                   context,
+//                   MaterialPageRoute(builder: (BuildContext context) {
+//                     return DetailPage(
+//                       data: Detail.data[index],
+//                     );
 
 // InkWell(
 //           onTap: () =>

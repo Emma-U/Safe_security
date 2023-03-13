@@ -1,37 +1,38 @@
 import 'package:flutter/material.dart';
 import 'package:ui_secrity/model/detail_item_model.dart';
-import 'package:ui_secrity/utilities/list.dart';
 import 'package:ui_secrity/widget/page_file.dart';
+
+// Detail _detail = Detail();
 
 class DetailPage extends StatelessWidget {
   const DetailPage({
     super.key,
+    this.data,
   });
-
+  final DetailItem? data;
   @override
   Widget build(BuildContext context) {
-    List<DetailItem> data = List.of(Detail.data);
+    // final Detail data = List.of(Detail.data) as Detail;
+    // Detail img = Detail.data as Detail;
+    // final DetailItem data =
+    //     ModalRoute.of(context)!.settings.arguments as DetailItem;
+
     return Scaffold(
-      body: ListView.builder(
-        itemCount: data.length,
-        itemBuilder: (BuildContext context, int index) {
-          return Stack(
+      body: Stack(
+        children: [
+          Stack(
             children: [
-              Stack(
-                children: [
-                  Image.asset(
-                    data[index].img
-                    //!= Null ??data.img:  'No Language',
-                    ,
-                    fit: BoxFit.fill,
-                    height: double.infinity,
-                  )
-                ],
-              ),
-              const PageFile(),
+              Image.asset(
+                data!.img
+                //!= Null ??data.img:  'No Language',
+                ,
+                fit: BoxFit.fill,
+                height: double.infinity,
+              )
             ],
-          );
-        },
+          ),
+          const PageFile(),
+        ],
       ),
     );
   }
