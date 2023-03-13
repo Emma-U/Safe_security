@@ -43,15 +43,3 @@ class _ContainerWidgetState extends State<ContainerWidget> {
     );
   }
 }
-// Navigator.push(
-//                   context,
-//                   MaterialPageRoute(builder: (BuildContext context) {
-//                     return DetailPage(
-//                       data: Detail.data[index],
-//                     );
-
-// InkWell(
-//           onTap: () =>
-//               Navigator.pushNamed(context, 'thirdScreen', arguments: get),
-//           child: ContainerItem(getItem: get),
-//         );
