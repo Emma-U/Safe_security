@@ -11,7 +11,7 @@ class SlidableWidget extends StatefulWidget {
     required this.background,
     required this.onSlided,
     this.actionThreshold = 0.1,
-    required Key key,
+    Key? key,
     required List<Container> children,
   }) : super(key: key);
 
