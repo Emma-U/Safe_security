@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ui_secrity/model/detail_item_model.dart';
 import 'package:ui_secrity/page/detail_page.dart';
 import 'package:ui_secrity/utilities/list.dart';
 import 'package:ui_secrity/widget/container_item.dart';
@@ -12,33 +13,44 @@ class ContainerWidget extends StatefulWidget {
   State<ContainerWidget> createState() => _ContainerWidgetState();
 }
 
-int detail = 0; //Detail.data.length;
+int detail = Detail.data.length;
 
 class _ContainerWidgetState extends State<ContainerWidget> {
   @override
   Widget build(BuildContext context) {
-    var get = Detail.data[detail];
+    DetailItem data = List.of(Detail.data[detail] as Iterable) as DetailItem;
+    // var get = Detail.data[detail];
     return GestureDetector(
       onTap: () => Navigator.push(context,
           MaterialPageRoute(builder: (BuildContext context) {
-        return DetailPage(data: get);
+        return DetailPage(data: data);
       })),
-      child: ListWheelScrollView(
-        clipBehavior: Clip.hardEdge,
-        offAxisFraction: -8,
-        scrollBehavior: const ScrollBehavior(),
-        itemExtent: 420,
-        onSelectedItemChanged: (value) {
-          // value = detail;
+      child: listWheelScrollViewWidget(),
+    );
+  }
+
+  Widget listWheelScrollViewWidget() {
+    return ListWheelScrollView(
+      clipBehavior: Clip.hardEdge,
+      offAxisFraction: -8,
+      scrollBehavior: const MaterialScrollBehavior(
+          androidOverscrollIndicator: AndroidOverscrollIndicator.glow),
+      itemExtent: 420,
+      onSelectedItemChanged: (value) {
+        // value = detail;
+      },
+      //useMagnifier: true,
+      physics: const FixedExtentScrollPhysics(),
+      squeeze: 1.5,
+      diameterRatio: 30,
+      children: List.generate(
+        Detail.data.length,
+        (index) {
+          // var get = Detail.data[index];
+          DetailItem data =
+              List.of(Detail.data[detail] as Iterable) as DetailItem;
+          return ContainerItem(getItem: data);
         },
-        //useMagnifier: true,
-        physics: const FixedExtentScrollPhysics(),
-        squeeze: 1.5,
-        diameterRatio: 30,
-        children: List.generate(Detail.data.length, (index) {
-          var get = Detail.data[index];
-          return ContainerItem(getItem: get);
-        }),
       ),
     );
   }
