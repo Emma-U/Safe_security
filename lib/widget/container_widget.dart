@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:ui_secrity/model/detail_item_model.dart';
 import 'package:ui_secrity/page/detail_page.dart';
 import 'package:ui_secrity/utilities/list.dart';
-import 'package:ui_secrity/widget/container_item.dart';
 import 'package:ui_secrity/widget/slider.dart';
 
 class ContainerWidget extends StatefulWidget {
@@ -18,9 +17,13 @@ class _ContainerWidgetState extends State<ContainerWidget> {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-        itemCount: data.length,
-        itemBuilder: (context, index) =>
-            SlidableWidget(children: [], onSlided: () {}, child: Container()));
+      itemCount: data.length,
+      itemBuilder: (context, index) => SlidableWidget(
+        children: const [],
+        onSlided: () {},
+        child: Container(),
+      ),
+    );
   }
 }
 
