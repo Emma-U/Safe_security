@@ -42,6 +42,6 @@ class Detail {
       time: '10.30 AM',
       active: true,
       inactive: false,
-    )
+    ),
   ];
 }

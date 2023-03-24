@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:ui_secrity/model/detail_item_model.dart';
 import 'package:ui_secrity/utilities/constant.dart';
-import 'package:ui_secrity/utilities/list.dart';
-import 'package:ui_secrity/widget/container_widget.dart';
 import 'package:ui_secrity/widget/item_key.dart';
 import 'package:ui_secrity/widget/speaker_widget.dart';
 import 'package:ui_secrity/widget/text_widget.dart';
@@ -14,6 +13,8 @@ class PageFile extends StatefulWidget {
   @override
   State<PageFile> createState() => _PageFileState();
 }
+
+DetailItem? file;
 
 class _PageFileState extends State<PageFile> {
   @override
@@ -42,9 +43,7 @@ class _PageFileState extends State<PageFile> {
             ),
           ),
         ),
-        TopDetail(
-          file: Detail.data[detail],
-        ),
+        TopDetail(file: file),
         const SpeakerWidget(),
         const ItemKey()
       ],

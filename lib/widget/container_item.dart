@@ -5,7 +5,8 @@ import 'package:ui_secrity/utilities/constant.dart';
 
 class ContainerItem extends StatefulWidget {
   final DetailItem? getItem;
-  const ContainerItem({
+  const ContainerItem(
+    DetailItem data, {
     super.key,
     this.getItem,
   });

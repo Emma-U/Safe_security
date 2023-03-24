@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 
 class SlidableWidget extends StatefulWidget {
-  final Widget child;
-  final Widget background;
+  final Widget? child;
+  final Widget? background;
   final VoidCallback onSlided;
   final double actionThreshold;
 
   const SlidableWidget({
-    required this.child,
-    required this.background,
+    this.child,
+    this.background,
     required this.onSlided,
     this.actionThreshold = 0.1,
     Key? key,
-    required List<Container> children,
+    required List<Widget> children,
   }) : super(key: key);
 
   @override

@@ -77,3 +77,89 @@
 //   }
 // }
 // () ?? 'assets/images/kitchen.png'),
+// class ContainerWidget extends StatefulWidget {
+//   const ContainerWidget({
+//     super.key,
+//   });
+
+//   @override
+//   State<ContainerWidget> createState() => _ContainerWidgetState();
+// }
+
+// // List<Detail> detailData(List<DetailItem> detail) {
+// //   for (DetailItem detail in detail) {
+// //     print(detail);
+// //   }
+// // }
+// // int detail = Detail.data.length;
+
+// List<DetailItem> items = List.of(Detail.data);
+
+// class _ContainerWidgetState extends State<ContainerWidget> {
+//   @override
+//   Widget build(BuildContext context) {
+//     // detailData(Detail.data);
+//     return listWheelScrollViewWidget(items);
+//   }
+
+//   Widget listWheelScrollViewWidget(List<DetailItem> items,
+//       {List<DetailItem>? item}) {
+//     return ListWheelScrollView(
+//       clipBehavior: Clip.hardEdge,
+//       offAxisFraction: -8,
+//       scrollBehavior: const MaterialScrollBehavior(
+//         androidOverscrollIndicator: AndroidOverscrollIndicator.glow,
+//       ),
+//       itemExtent: 420,
+//       onSelectedItemChanged: (value) {
+//         // value = detail;
+//       },
+//       //useMagnifier: true,
+//       physics: const FixedExtentScrollPhysics(),
+//       squeeze: 1.5,
+//       diameterRatio: 30,
+//       children: [
+//         ListTile(
+//           title: Text(item as String),
+//         ),
+//       ],
+//     );
+//   }
+// }
+
+// // ListView.builder(
+// //       itemCount: items.length,
+// //       itemBuilder: (BuildContext context, int index) {
+// //         return GestureDetector(
+// //           onTap: () => Navigator.push(context,
+// //               MaterialPageRoute(builder: (BuildContext context) {
+// //             return DetailPage(data: items[index]);
+// //           })),
+// //           child: Stack(children: [
+           
+// //             ListTile(
+// //               title: Text(items[index].roomName),
+// //             )
+// //           ]),
+// //         );
+// //       },
+// //     );
+// // DetailItem data = List.of(Detail.data[detail] as Iterable) as DetailItem;
+//     // // var get = Detail.data[detail];
+//     // return GestureDetector(
+//     //   onTap: () => Navigator.push(context,
+//     //       MaterialPageRoute(builder: (BuildContext context) {
+//     //     return DetailPage(data: data);
+//     //   })),
+//     //   child: detail < detail || detail > Detail.data.length
+//     //       ? null
+//     //       : listWheelScrollViewWidget(),
+//     // );
+
+//     // List.generate(
+//     //     Detail.data.length,
+//     //     (index) {
+//     //       DetailItem data = List.of(Detail.data) as DetailItem;
+//     //       return ContainerItem(getItem: data);
+//     //     },
+//     //   ),

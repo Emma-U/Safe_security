@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:ui_secrity/utilities/constant.dart';
 import 'package:ui_secrity/utilities/method.dart';
 import 'package:ui_secrity/widget/container_widget.dart';
-import 'package:ui_secrity/widget/slider.dart';
 
 class FilePage extends StatefulWidget {
   const FilePage({super.key});
@@ -20,13 +19,9 @@ class _FilePageState extends State<FilePage> {
       body: SafeArea(
           child: Stack(
         children: [
-          SlidableWidget(
-            background: textCallBack(textCall),
-            children: const [],
-            onSlided: () {},
-            child: const ContainerWidget(),
-          ),
+          const ContainerWidget(),
           homeBottom(context),
+          textCallBack(textCall)
         ],
       )),
     );

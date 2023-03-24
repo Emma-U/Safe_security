@@ -3,55 +3,38 @@ import 'package:ui_secrity/model/detail_item_model.dart';
 import 'package:ui_secrity/page/detail_page.dart';
 import 'package:ui_secrity/utilities/list.dart';
 import 'package:ui_secrity/widget/container_item.dart';
+import 'package:ui_secrity/widget/slider.dart';
 
 class ContainerWidget extends StatefulWidget {
-  const ContainerWidget({
-    super.key,
-  });
+  const ContainerWidget({super.key});
 
   @override
   State<ContainerWidget> createState() => _ContainerWidgetState();
 }
 
-int detail = Detail.data.length;
-
 class _ContainerWidgetState extends State<ContainerWidget> {
+  List<DetailItem> data = List.of(Detail.data);
+
   @override
   Widget build(BuildContext context) {
-    DetailItem data = List.of(Detail.data[detail] as Iterable) as DetailItem;
-    // var get = Detail.data[detail];
-    return GestureDetector(
-      onTap: () => Navigator.push(context,
-          MaterialPageRoute(builder: (BuildContext context) {
-        return DetailPage(data: data);
-      })),
-      child: listWheelScrollViewWidget(),
-    );
-  }
-
-  Widget listWheelScrollViewWidget() {
-    return ListWheelScrollView(
-      clipBehavior: Clip.hardEdge,
-      offAxisFraction: -8,
-      scrollBehavior: const MaterialScrollBehavior(
-          androidOverscrollIndicator: AndroidOverscrollIndicator.glow),
-      itemExtent: 420,
-      onSelectedItemChanged: (value) {
-        // value = detail;
-      },
-      //useMagnifier: true,
-      physics: const FixedExtentScrollPhysics(),
-      squeeze: 1.5,
-      diameterRatio: 30,
-      children: List.generate(
-        Detail.data.length,
-        (index) {
-          // var get = Detail.data[index];
-          DetailItem data =
-              List.of(Detail.data[detail] as Iterable) as DetailItem;
-          return ContainerItem(getItem: data);
-        },
-      ),
-    );
+    return ListView.builder(
+        itemCount: data.length,
+        itemBuilder: (context, index) =>
+            SlidableWidget(children: [], onSlided: () {}, child: Container()));
   }
 }
+
+onItemTap(BuildContext context, int index) {
+  Navigator.of(context)
+      .push(MaterialPageRoute(builder: (context) => const DetailPage()));
+}
+//  SlidableWidget(
+//         child: ContainerItem(
+//           data[index],
+//           () {
+//             onItemTap(context, index);
+//           },
+//         ),
+//         onSlided: () {}, children: [],
+       
+//       ),
