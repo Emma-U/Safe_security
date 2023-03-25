@@ -5,9 +5,9 @@ import 'package:ui_secrity/widget/page_file.dart';
 class DetailPage extends StatelessWidget {
   const DetailPage({
     super.key,
-    this.data,
+    required this.data,
   });
-  final DetailItem? data;
+  final DetailItem data;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,13 +16,15 @@ class DetailPage extends StatelessWidget {
           Stack(
             children: [
               Image.asset(
-                data!.img,
+                data.img,
                 fit: BoxFit.fill,
                 height: double.infinity,
               )
             ],
           ),
-          const PageFile(),
+          PageFile(
+            file: data,
+          ),
         ],
       ),
     );

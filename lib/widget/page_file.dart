@@ -6,17 +6,18 @@ import 'package:ui_secrity/widget/speaker_widget.dart';
 import 'package:ui_secrity/widget/text_widget.dart';
 
 class PageFile extends StatefulWidget {
+  final DetailItem file;
   const PageFile({
     super.key,
+    required this.file,
   });
 
   @override
   State<PageFile> createState() => _PageFileState();
 }
 
-DetailItem? file;
-
 class _PageFileState extends State<PageFile> {
+  late DetailItem file;
   @override
   Widget build(BuildContext context) {
     return Stack(
