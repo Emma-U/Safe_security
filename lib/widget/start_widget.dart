@@ -11,8 +11,6 @@ class StartWidget extends StatefulWidget {
 }
 
 class _StartWidgetState extends State<StartWidget> {
-  // AnimationController? animationController;
-// with SingleTickerProviderStateMixin
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -31,9 +29,9 @@ class _StartWidgetState extends State<StartWidget> {
                     ),
                     borderRadius: BorderRadius.circular(25),
                   ),
-                  child: Row(
+                  child: const Row(
                     mainAxisAlignment: MainAxisAlignment.end,
-                    children: const [
+                    children: [
                       Icon(
                         Icons.arrow_forward_ios_outlined,
                         size: 10,
@@ -72,7 +70,7 @@ class _StartWidgetState extends State<StartWidget> {
               action: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(
+                  MaterialPageRoute<void>(
                     builder: (BuildContext context) => const FilePage(),
                   ),
                 );

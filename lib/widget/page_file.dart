@@ -17,7 +17,6 @@ class PageFile extends StatefulWidget {
 }
 
 class _PageFileState extends State<PageFile> {
-  late DetailItem file;
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -27,7 +26,7 @@ class _PageFileState extends State<PageFile> {
           left: 25,
           child: GestureDetector(
             onTap: () {
-              Navigator.pushNamed(context, 'secondScreen');
+              Navigator.pop(context);
             },
             child: Container(
               height: 75,
@@ -44,7 +43,7 @@ class _PageFileState extends State<PageFile> {
             ),
           ),
         ),
-        TopDetail(file: file),
+        TopDetail(file: widget.file),
         const SpeakerWidget(),
         const ItemKey()
       ],

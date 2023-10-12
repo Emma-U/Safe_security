@@ -28,15 +28,15 @@ Stack secondContainer() {
 }
 
 Column startLog() {
-  return Column(
+  return const Column(
     children: [
       Padding(
-        padding: const EdgeInsets.all(10.0),
+        padding: EdgeInsets.all(10.0),
         child: Stack(
           children: [
             SafeArea(
               child: Column(
-                children: const [
+                children: [
                   Text(
                     'the security of your home in your pocket',
                     style: TextStyle(fontSize: 102),
